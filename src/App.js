@@ -1,13 +1,23 @@
+
 import './App.css';
-import Data from './component/api.jsx'
+import Products from './component/api.jsx'
+import { BrowserRouter , Route , Routes } from 'react-router-dom';
+import Navbar from './component/navbar';
+
 
 
 
 function App() {
   return (
-    <div className='container'>
-      <Data/>      
-    </div>
+    <>
+   <Navbar />
+  <BrowserRouter>
+  <Routes>
+    <Route path='/' element = {<Products /> } />
+    <Route path='/:id' element = {<Products /> } />
+  </Routes>
+  </BrowserRouter>
+  </>
   );
 }
 
